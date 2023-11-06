@@ -1,0 +1,85 @@
+{
+  "env": {
+    "browser": true,
+    "es2023": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "react"],
+  "rules": {
+    "react/prop-types": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "react/display-name": 0,
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }],
+    "object-shorthand": ["error", "always"],
+    /*
+     * CN Sonar Rules: BLOCKER
+     */
+    "use-isnan": "error", // S2688
+    "no-labels": "error", // S1219
+    "no-fallthrough": "error", // S128
+    /*
+     * CN Sonar Rules: CRITICAL
+     */
+    "no-unsafe-finally": "error", // S1143
+    "default-case": "error", // S131
+    "no-octal": "error", // S1314
+    "vars-on-top": "error", // S1526
+    "no-self-assign": "error", // S1656
+    "no-dupe-else-if": "error", // S1862
+    "no-duplicate-case": "error", // S1862
+    "no-unmodified-loop-condition": "error", // S1994
+    "for-direction": "error", // S2251
+    "no-global-assign": "error", // S2424
+    "no-var": "error", // S3504
+    "no-unsafe-negation": "error", // S3812
+    "constructor-super": "error", // S3854
+    "default-case-last": "error", // S4524
+    /*
+     * CN Sonar Rules: MAJOR + BUG
+     */
+    "no-bitwise": "warn", // S1529
+    "no-unreachable-loop": "warn", // S1751
+    "no-unreachable": "warn", // S1763
+    "no-unused-expressions": "warn", // S2123
+    "require-yield": "warn", // S3531
+    "no-empty-pattern": "warn", // S3799
+    /*
+     * CN Sonar Rules: MAJOR + CODE SMELL
+     */
+    "no-lone-blocks": "warn", // S108
+    "no-shadow-restricted-names": "warn", // S1117 (no-shadow -> not used cause it cannot ignore enums!)
+    "no-throw-literal": "warn", // S3696
+    "no-console": "warn", // S106
+    "no-sparse-arrays": "warn", // S4140
+    "no-caller": "warn", // S2685
+    "no-extra-label": "warn", // S1439
+    "default-param-last": "warn", // S1788
+    "max-lines": ["warn", 1000], // S104
+    "max-params": ["warn", 7], // S107
+    "max-depth": ["warn", 5], // S134
+    "max-lines-per-function": [
+      "warn",
+      { "max": 200, "skipBlankLines": true, "skipComments": true }
+    ], // S138
+    "complexity": ["warn", 15] // S3776
+  }
+}
