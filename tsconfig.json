@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "typings/i18n.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
