@@ -1,7 +1,7 @@
 import { Menu } from 'antd';
 import { useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { trimTrailingSlashes } from '../../utils/helpers';
+import { trimTrailingSlashes } from 'utils/helpers';
 
 const navStyle = {
   backgroundColor: '#001529',

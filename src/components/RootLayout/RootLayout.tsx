@@ -1,6 +1,6 @@
 import { Layout } from 'antd';
-import { Header } from '../Header/Header';
-import { Footer } from '../Footer/Footer';
+import { Footer } from 'components/Footer/Footer';
+import { Header } from 'components/Header/Header';
 import { Outlet } from 'react-router-dom';
 
 const headerStyle: React.CSSProperties = {
@@ -10,6 +10,7 @@ const headerStyle: React.CSSProperties = {
   position: 'sticky',
   lineHeight: '2rem',
   padding: '0.75rem',
+  top: 0,
   // width: '100%',
   // zIndex: 999,
 };

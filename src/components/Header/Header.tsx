@@ -1,8 +1,8 @@
 import { Col, Row, Space } from 'antd';
+import { Navigation } from 'components/Header/Navigation';
+import { ReactIcon } from 'components/Icon/ReactIcon/ReactIcon';
+import { LanguageSelector } from 'components/LanguageSelector/LanguageSelector';
 import { Link } from 'react-router-dom';
-import { ReactIcon } from '../Icon/ReactIcon/ReactIcon';
-import { LanguageSelector } from '../LanguageSelector/LanguageSelector';
-import { Navigation } from './Navigation';
 
 const logoStyle = {
   display: 'flex',

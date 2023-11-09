@@ -1,6 +1,6 @@
 import { Col, Row, Typography } from 'antd';
-import { PROJECT_NAME } from '../../types/constants';
 import dayjs from 'dayjs';
+import { PROJECT_NAME } from 'types/constants';
 
 export const Footer = () => {
   return (

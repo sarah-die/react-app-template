@@ -1,4 +1,4 @@
-import { IconType } from '../../../types/types';
+import { IconType } from 'types/types';
 
 export const ReactIcon = (props: IconType) => {
   const { width, height } = props;
@@ -6,7 +6,6 @@ export const ReactIcon = (props: IconType) => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       aria-hidden='true'
-      role='img'
       width={width ?? '2rem'}
       height={height ?? '2rem'}
       viewBox='0 0 280 280'
