@@ -1,1 +1,13 @@
-{}
+{
+  "routes": {
+    "home": "Home",
+    "another": "Andere Route"
+  },
+  "home": {
+    "intro": "Hey! Hier bist du auf der Home-Route",
+    "welcome-text": "Dieses Beispielprojekt verfügt über ein Rootlayout. Dieses teilt sich auf in Header, Content und Footer. Im Header ist das Menü und die Optionen zum Wechsel des Themes und der Sprache zu finden. Der Content wurde mit React Router Outlet realisiert und wechselt je nach aufgerufener Route."
+  },
+  "another-route": {
+    "intro": "Hey! Das ist eine andere Route"
+  }
+}

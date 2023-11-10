@@ -1,20 +1,17 @@
 import { Menu } from 'antd';
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { trimTrailingSlashes } from 'utils/helpers';
 
-const navStyle = {
-  backgroundColor: '#001529',
-  color: '#1178F2',
-};
-
 export const Navigation = () => {
+  const { t } = useTranslation();
   const { pathname } = useLocation();
   const path = trimTrailingSlashes(pathname);
 
   const navItems = [
-    { label: <Link to='/'>Home</Link>, key: 0 },
-    { label: <Link to='/anotherRoute'>Another Route</Link>, key: 1 },
+    { label: <Link to='/'>{t('routes.home')}</Link>, key: 0 },
+    { label: <Link to='/anotherRoute'>{t('routes.another')}</Link>, key: 1 },
   ];
 
   const activePath = useMemo(() => {
@@ -24,10 +21,10 @@ export const Navigation = () => {
 
   return (
     <Menu
+      theme='dark'
       items={navItems}
       mode='horizontal'
       selectedKeys={[activePath]}
-      style={navStyle}
     />
   );
 };

@@ -1,50 +1,33 @@
-import { Layout } from 'antd';
+import { ConfigProvider, Layout, theme } from 'antd';
 import { Footer } from 'components/Footer/Footer';
 import { Header } from 'components/Header/Header';
 import { Outlet } from 'react-router-dom';
 
-const headerStyle: React.CSSProperties = {
-  textAlign: 'center',
-  height: '6.5rem',
-  paddingInline: 50,
-  position: 'sticky',
-  lineHeight: '2rem',
-  padding: '0.75rem',
-  top: 0,
-  // width: '100%',
-  // zIndex: 999,
-};
-
-const contentStyle: React.CSSProperties = {
-  // textAlign: 'center',
-  minHeight: '85vh',
-  height: 'fit-content',
-  display: 'flex',
-  flexFlow: 'column',
-};
-
-const footerStyle: React.CSSProperties = {
-  // textAlign: 'center',
-  // height: 64,
-  // position: 'relative',
-  // bottom: '0',
-  // left: '0',
-  // width: '100%',
-  backgroundColor: 'gray',
-};
+const { defaultAlgorithm, darkAlgorithm } = theme;
 
 export const RootLayout = () => {
+  const isDarkMode = false;
+
   return (
-    <Layout>
-      <Layout.Header style={headerStyle}>
-        <Header />
-      </Layout.Header>
-      <Layout.Content style={contentStyle}>
-        <Outlet />
-      </Layout.Content>
-      <Layout.Footer style={footerStyle}>
-        <Footer />
-      </Layout.Footer>
-    </Layout>
+    <ConfigProvider
+      theme={{ algorithm: isDarkMode ? darkAlgorithm : defaultAlgorithm }}
+    >
+      <Layout style={{ minHeight: '100vh', maxWidth: 1400, margin: '0 auto' }}>
+        <Layout.Header
+          style={{
+            height: '5rem',
+            lineHeight: '2.2rem',
+          }}
+        >
+          <Header />
+        </Layout.Header>
+        <Layout.Content>
+          <Outlet />
+        </Layout.Content>
+        <Layout.Footer>
+          <Footer />
+        </Layout.Footer>
+      </Layout>
+    </ConfigProvider>
   );
 };

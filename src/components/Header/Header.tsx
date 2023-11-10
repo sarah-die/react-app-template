@@ -1,35 +1,32 @@
-import { Col, Row, Space } from 'antd';
+import { Col, Row, Typography } from 'antd';
 import { Navigation } from 'components/Header/Navigation';
-import { ReactIcon } from 'components/Icon/ReactIcon/ReactIcon';
 import { LanguageSelector } from 'components/LanguageSelector/LanguageSelector';
+import { ThemeSelector } from 'components/ThemeSelector/ThemeSelector';
 import { Link } from 'react-router-dom';
-
-const logoStyle = {
-  display: 'flex',
-  alignItems: 'center',
-};
 
 export const Header = () => {
   return (
-    <div>
-      <Row justify='space-around' align='middle'>
-        <Col style={{ paddingTop: '0.25rem' }}>
-          <Space align='baseline'>
-            <Link to='/' style={logoStyle}>
-              <ReactIcon />
-              <span>My Project</span>
-            </Link>
-          </Space>
+    <>
+      <Row justify='space-between'>
+        <Col span={16}>
+          <Link to='/'>
+            <Typography.Text style={{ color: 'whitesmoke' }}>
+              My Project
+            </Typography.Text>
+          </Link>
         </Col>
-        <Col>
-          <Space size='middle' align='center' style={{ paddingTop: '1rem' }}>
-            <LanguageSelector />
-          </Space>
+        <Col span={4}>
+          <LanguageSelector />
+        </Col>
+        <Col span={4}>
+          <ThemeSelector />
         </Col>
       </Row>
-      <Row>
-        <Navigation />
+      <Row justify='start'>
+        <Col span={24}>
+          <Navigation />
+        </Col>
       </Row>
-    </div>
+    </>
   );
 };

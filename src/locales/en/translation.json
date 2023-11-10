@@ -1,1 +1,13 @@
-{}
+{
+  "routes": {
+    "home": "Home",
+    "another": "Another Route"
+  },
+  "home": {
+    "intro": "Hello! This is home-route",
+    "welcome-text": "This sample project has a root layout. This is divided into header, content and footer. The header contains the menu and the options for changing the theme and language. The content was implemented with React Router Outlet and changes depending on the route called up."
+  },
+  "another-route": {
+    "intro": "Hello! This is another route"
+  }
+}
