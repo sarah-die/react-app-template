@@ -21,12 +21,16 @@
     },
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
+    "moduleResolution": "bundler", // use when working with vite [https://devblogs.microsoft.com/typescript/announcing-typescript-5-0-beta/#moduleresolution-bundler]
+    "allowImportingTsExtensions": true, // recommended for TS V5
+    "resolveJsonModule": true, // allows importing modules with a .json extension
+    "allowJs": true, // allows js modules to be imported
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": true, // recommended for TS V5
     "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true, // allows import React from "react";
+
+    "noErrorTruncation": true,
 
     /* Linting */
     "strict": true,
@@ -34,6 +38,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "typings/i18n.d.ts"],
+
+  "include": ["src", "typings/**/*.d.ts"],
+  "exclude": ["./node_modules", "./public", "./dist", "./.vscode"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

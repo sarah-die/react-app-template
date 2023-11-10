@@ -17,9 +17,10 @@
     }
   },
   "extends": [
-    "plugin:react/recommended",
+    "plugin:react/recommended", // rules for using react
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended" // rules to avoid common pitfalls when using hooks
   ],
   "plugins": ["@typescript-eslint", "react"],
   "rules": {
@@ -27,7 +28,7 @@
     "@typescript-eslint/explicit-module-boundary-types": 0,
     "react/display-name": 0,
     "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off",
+    "react/react-in-jsx-scope": "off", // since react version is higher than 17
     "react/no-unknown-property": ["error", { "ignore": ["css"] }],
     "object-shorthand": ["error", "always"],
     "use-isnan": "error",
