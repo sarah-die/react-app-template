@@ -2,15 +2,16 @@ import { ConfigProvider, Layout, theme } from 'antd';
 import { Footer } from 'components/Footer/Footer';
 import { Header } from 'components/Header/Header';
 import { Outlet } from 'react-router-dom';
+import { useThemeStore } from 'src/stores/configStore';
 
 const { defaultAlgorithm, darkAlgorithm } = theme;
 
 export const RootLayout = () => {
-  const isDarkMode = false;
+  const theme = useThemeStore(state => state.theme);
 
   return (
     <ConfigProvider
-      theme={{ algorithm: isDarkMode ? darkAlgorithm : defaultAlgorithm }}
+      theme={{ algorithm: theme === 'dark' ? darkAlgorithm : defaultAlgorithm }}
     >
       <Layout style={{ minHeight: '100vh', maxWidth: 1400, margin: '0 auto' }}>
         <Layout.Header

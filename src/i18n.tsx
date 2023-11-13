@@ -2,6 +2,9 @@ import i18n from 'i18next';
 import de from 'locales/de/translation.json';
 import en from 'locales/en/translation.json';
 import { initReactI18next } from 'react-i18next';
+import { LANGUAGE_TYPES } from './types/constants';
+
+const { DE, EN } = LANGUAGE_TYPES;
 
 const languageResources = {
   en: {
@@ -22,8 +25,8 @@ i18n
   // init i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
-    lng: 'de', // default language
-    fallbackLng: 'en',
+    lng: DE, // default language
+    fallbackLng: EN,
     defaultNS: 'translation',
     debug: true,
     interpolation: {
